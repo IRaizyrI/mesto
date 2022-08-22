@@ -13,7 +13,7 @@
         row-gap: 0;
         margin: 40px auto 0 auto;
         justify-items: center;
-        grid-template-rows: min-content min-content min-content;  
+        grid-template-rows: min-content min-content min-content;
         grid-template-columns: 1fr;
                     
     }
