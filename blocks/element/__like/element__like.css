@@ -6,8 +6,8 @@
   background-size: contain;
   align-self: center;
   background-image: url(../../../images/like.svg);
-  background-color: rgba(0, 0, 0, 0);
-
+  background-color: transparent;
+  cursor: pointer;
 }
 
 .element__like:hover {
