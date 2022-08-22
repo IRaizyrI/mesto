@@ -1,14 +1,14 @@
 .header__logo {
-    background-color: #000;
-    width: 142px;
-    height: 33px;
-    margin: 45px 0 41px 0;
+  width: 142px;
+  height: 33px;
+  margin: 45px 0 41px 0;
+  display: block;
+  object-fit: cover;
 }
 @media screen and (max-width: 320px) {
-    .header__logo {
-        height: 24.4px;
-        width: 103.74px;
-        margin: 28px 0 31.6px 27px;
-    }
-    
+  .header__logo {
+    height: 24.4px;
+    width: 103.74px;
+    margin: 28px 0 31px 27px;
+  }
 }

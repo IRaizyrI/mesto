@@ -1,28 +1,28 @@
 .profile__edit {
-    background-image: url(../../../images/edit.svg);
-    background-size: 10px;
-    background-position: center;
-    width: 24px;
-    height: 24px;
-    border: 1px solid #fff;
-    background-color: #000;
-    background-repeat: no-repeat;
-    grid-column: 2;
-    grid-row: 1;
+  background-image: url(../../../images/edit.svg);
+  background-size: 10px;
+  background-position: center;
+  width: 24px;
+  height: 24px;
+  border: 1px solid #fff;
+  background-color: #000;
+  background-repeat: no-repeat;
+  grid-column: 2;
+  grid-row: 1;
 }
 
 .profile__edit:hover {
-    opacity: 0.6;
+  opacity: 0.6;
 }
 @media screen and (max-width: 735px) {
-    .profile__edit {
-        grid-column: 3;
-    }
+  .profile__edit {
+    grid-column: 3;
+  }
 }
 @media screen and (max-width: 425px) {
-    .profile__edit {
-        width: 18px;
-        height: 18px;
-        background-size: 7.5px;
-    }
+  .profile__edit {
+    width: 18px;
+    height: 18px;
+    background-size: 7px;
+  }
 }

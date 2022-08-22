@@ -1,7 +1,7 @@
 .element__caption {
-        margin: 25px 15px 31px 21px;
-        max-width: 242px;
-        display: flex;
-        justify-content: space-between;
-        text-overflow: ellipsis;
-    }
+    margin: 25px 15px 31px 21px;
+    max-width: 242px;
+    display: flex;
+    justify-content: space-between;
+    text-overflow: ellipsis;
+  }
