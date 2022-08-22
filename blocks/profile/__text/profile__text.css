@@ -16,7 +16,7 @@
         grid-column: 2;
     }
 }  
-@media screen and (max-width: 320x) {
+@media screen and (max-width: 320px) {
     .profile__text {
         font-size: 14px;
         line-height: 17px;
