@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="pages/index.css">
+    <title>Mesto</title>
+</head>
+<body class="body">
+    <div class="page">
+        <header class="header">
+            <img class="header__logo" src="images/mesto.svg" alt="Лого">
+        </header>
+        <main class="content">
+            <section class="profile">
+                <img class="profile__avatar" src="images/kusto.png" alt="Жак-Ив Кусто">
+                <div class="profile__info">
+                    <h1 class="profile__name">Жак-Ив Кусто</h1>
+                    <p class="profile__text">Исследователь океана</p>
+                    <button class="profile__edit" type="submit"></button>
+                </div>
+                <button class="profile__add" type="submit"></button>
+            </section>
+
+            <section class="elements">
+                <div class="element__card">
+                    <img class="element__image" src="images/karachaevsk.png" alt="Карачаевск">
+                    <div class="element__caption">
+                        <h2 class="element__title">Карачаевск</h2>
+                        <button class="element__like" type="button"></button>
+                    </div>
+                </div>
+                <div class="element__card">
+                    <img class="element__image" src="images/onekotyan.jpg" alt="Креницына">
+                    <div class="element__caption">
+                        <h2 class="element__title">Вулкан Креницына</h2>
+                        <button class="element__like" type="button"></button>
+                    </div>
+                </div>
+                <div class="element__card">
+                    <img class="element__image" src="images/elbrus.png" alt="Гора Эльбрус">
+                    <div class="element__caption">
+                        <h2 class="element__title">Гора Эльбрус</h2>
+                        <button class="element__like" type="button"></button>
+                    </div>
+                </div>
+                <div class="element__card">
+                    <img class="element__image" src="images/baikal.jpg" alt="Байкал">
+                    <div class="element__caption">
+                        <h2 class="element__title">Байкал</h2>
+                        <button class="element__like" type="button"></button>
+                    </div>
+                </div>
+                <div class="element__card">
+                    <img class="element__image" src="images/dombai.png" alt="Домбай">
+                    <div class="element__caption">
+                        <h2 class="element__title">Домбай</h2>
+                        <button class="element__like" type="button"></button>
+                    </div>
+                </div>
+                <div class="element__card">
+                    <img class="element__image" src="images/kareliya.jpg" alt="Карелия">
+                    <div class="element__caption">
+                        <h2 class="element__title">Карелия</h2>
+                        <button class="element__like" type="button"></button>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="footer">
+            <p class="footer__copyright">© 2022 Логвинов Илья</p>
+        </footer>
+
+        
+
+        <div class="popup">
+            <button class="popup__close" type="button"></button>
+            <form class="popup__container" name="popup-container">
+                <h2 class="popup__header">Редактировать профиль</h2>
+                <input class="popup__element popup__element_title" type="text" name="popup__title">
+                <input class="popup__element popup__element_subtitle" type="text" name="popup__subtitle">
+                <button class="popup__save" type="submit">Сохранить</button>
+            </form>
+        </div>
+        <script src="scripts/script.js"></script>
+
+    </div>
+</body>
+</html>
