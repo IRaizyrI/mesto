@@ -28,6 +28,7 @@
 @import url(../blocks/element/__button-delete/element__button-delete.css);
 
 @import url(../blocks/popup/popup.css);
+@import url(../blocks/popup/_type/_change-profile/popup_type_change-profile.css);
 @import url(../blocks/popup/_type/_add-element/popup_type_add-element.css);
 @import url(../blocks/popup/_type/_inspect-image/popup_type_inspect-image.css);
 @import url(../blocks/popup/__image/popup__image.css);

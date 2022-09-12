@@ -1,7 +1,7 @@
 
-let popup = document.querySelector('.popup');
-let popupTitle = popup.querySelector('.popup__input_type_title');
-let popupSubtitle = popup.querySelector('.popup__input_type_subtitle');
+let popupChangeProfile = document.querySelector('.popup_type_change-profile');
+let popupTitle = popupChangeProfile.querySelector('.popup__input_type_title');
+let popupSubtitle = popupChangeProfile.querySelector('.popup__input_type_subtitle');
 
 let profileName = document.querySelector('.profile__name');
 let profileText = document.querySelector('.profile__text');
@@ -53,16 +53,16 @@ initialCards.forEach(element => {
   elements.append(userElement);
 });
 
-function openPopup() {
+function openPopupChangeProfile() {
   popupTitle.value = profileName.textContent;
   popupSubtitle.value = profileText.textContent;
-  popup.classList.add('popup_is-opened');
+  popupChangeProfile.classList.add('popup_is-opened');
 }
 
 function closePopup() {
-    popup.classList.remove('popup_is-opened');
-    popupAddElement.classList.remove('popup_is-opened');
-    popupInspectImage.classList.remove('popup_is-opened');
+  popupChangeProfile.classList.remove('popup_is-opened');
+  popupAddElement.classList.remove('popup_is-opened');
+  popupInspectImage.classList.remove('popup_is-opened');
 }
 
 function submitNameForm(evt) {
@@ -104,7 +104,7 @@ function inspectImage(evt){
   popupImageDescription.textContent = evt.target.closest('.element').querySelector('.element__title').textContent;
   popupInspectImage.classList.add('popup_is-opened');
 }
-document.querySelector('.profile__edit').addEventListener('click', openPopup);
+document.querySelector('.profile__edit').addEventListener('click', openPopupChangeProfile);
 document.querySelector('.profile__add').addEventListener('click', openPopupAddElement);
 document.querySelector('.popup__container').addEventListener('submit', submitNameForm);
 document.querySelector('.popup__container_type_add-element').addEventListener('submit', submitElementForm);
