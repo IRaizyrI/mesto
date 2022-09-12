@@ -50,6 +50,8 @@ initialCards.forEach(element => {
   userElement.querySelector('.element__image').alt = element.name;
   userElement.querySelector('.element__title').textContent = element.name;
   userElement.querySelector('.element__image').addEventListener('click', inspectImage);
+  userElement.querySelector('.element__button-like').addEventListener('click', toggleLike);
+  userElement.querySelector('.element__button-delete').addEventListener('click', elementDelete);
   elements.append(userElement);
 });
 
@@ -75,6 +77,7 @@ function submitElementForm(evt) {
   evt.preventDefault();
   const userElement = elementTemplate.content.querySelector('.element').cloneNode(true);
   userElement.querySelector('.element__image').src = popupAddElementLink.value;
+  userElement.querySelector('.element__image').alt = popupAddElementName.value;
   userElement.querySelector('.element__title').textContent = popupAddElementName.value;
   userElement.querySelector('.element__button-like').addEventListener('click', toggleLike);
   userElement.querySelector('.element__button-delete').addEventListener('click', elementDelete);
@@ -106,15 +109,10 @@ function inspectImage(evt){
 }
 document.querySelector('.profile__edit').addEventListener('click', openPopupChangeProfile);
 document.querySelector('.profile__add').addEventListener('click', openPopupAddElement);
-document.querySelector('.popup__container').addEventListener('submit', submitNameForm);
-document.querySelector('.popup__container_type_add-element').addEventListener('submit', submitElementForm);
+
+popupChangeProfile.querySelector('.popup__container').addEventListener('submit', submitNameForm);
+popupAddElement.querySelector('.popup__container').addEventListener('submit', submitElementForm);
 
 document.querySelectorAll('.popup__close').forEach(item => {
   item.addEventListener('click', closePopup);
-});
-document.querySelectorAll('.element__button-like').forEach(item => {
-  item.addEventListener('click', toggleLike);
-});
-document.querySelectorAll('.element__button-delete').forEach(item => {
-  item.addEventListener('click', elementDelete);
 });
