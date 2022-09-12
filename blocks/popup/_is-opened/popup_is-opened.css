@@ -1,3 +1,4 @@
 .popup_is-opened {
-  display: grid;
+  visibility: visible;
+  opacity: 1;
 }

@@ -24,7 +24,7 @@
       </section>
 
       <section class="elements">
-        <div class="element">
+        <!-- <div class="element">
           <img class="element__image" src="./images/karachaevsk.png" alt="Карачаевск">
           <div class="element__caption">
             <h2 class="element__title">Карачаевск</h2>
@@ -66,7 +66,17 @@
             <button class="element__like" type="button"></button>
           </div>
         </div>
-      </section>
+      </section> -->
+      <template class="element">
+        <div class="element">
+          <img class="element__image" src="./images/kareliya.jpg" alt="Карелия">
+          <button type="button" class="button element__button-delete"></button>
+          <div class="element__caption">
+            <h2 class="element__title">Карелия</h2>
+            <button class="element__button-like" type="button"></button>
+          </div>
+        </div>
+      </template>
     </main>
     <footer class="footer">
       <p class="footer__copyright">&copy; 2022 Логвинов Илья</p>
@@ -79,6 +89,20 @@
         <input class="popup__input popup__input_type_subtitle" type="text" placeholder="О себе" name="popup__subtitle">
         <button class="popup__save" type="submit">Сохранить</button>
       </form>
+    </div>
+    <div class="popup_type_add-element">
+      <button class="popup__close" type="button"></button>
+      <form class="popup__container_type_add-element" name="popup-container-type-add-element">
+        <h2 class="popup__header">Новое место</h2>
+        <input class="popup__input popup__input_type_name" type="text" placeholder="Название" name="popup__name">
+        <input class="popup__input popup__input_type_link" type="text" placeholder="Ссылка на картинку" name="popup__link">
+        <button class="popup__add-element" type="submit">Создать</button>
+      </form>
+    </div>
+    <div class="popup_type_inspect-image">
+      <button class="popup__close" type="button"></button>
+      <img src="./images/kareliya.jpg" alt="Карелия" class="popup__image">
+      <p class="popup__image-description">Карелия</p>
     </div>
   </div>
   <script src="scripts/script.js"></script>

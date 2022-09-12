@@ -23,16 +23,26 @@
 @import url(../blocks/element/__image/element__image.css);
 @import url(../blocks/element/__caption/element__caption.css);
 @import url(../blocks/element/__title/element__title.css);
-@import url(../blocks/element/__like/element__like.css);
-@import url(../blocks/element/__like/_active/element__like_active.css);
+@import url(../blocks/element/__button-like/element__button-like.css);
+@import url(../blocks/element/__button-like/_active/element__button-like_active.css);
+@import url(../blocks/element/__button-delete/element__button-delete.css);
 
 @import url(../blocks/popup/popup.css);
+@import url(../blocks/popup/_type/_add-element/popup_type_add-element.css);
+@import url(../blocks/popup/_type/_inspect-image/popup_type_inspect-image.css);
+@import url(../blocks/popup/__image/popup__image.css);
 @import url(../blocks/popup/__container/popup__container.css);
 @import url(../blocks/popup/_is-opened/popup_is-opened.css);
 @import url(../blocks/popup/__close/popup__close.css);
 @import url(../blocks/popup/__header/popup__header.css);
 @import url(../blocks/popup/__input/popup__input.css);
 @import url(../blocks/popup/__save/popup__save.css);
+@import url(../blocks/popup/__add-element/popup__add-element.css);
+@import url(../blocks/popup/__container/_type/_add-element/popup__container_type_add-element.css);
+
+@import url(../blocks/popup/__image-description/popup__image-description.css);
+
+
 
 @import url(../blocks/footer/footer.css);
 @import url(../blocks/footer/__copyright/footer__copyright.css);
