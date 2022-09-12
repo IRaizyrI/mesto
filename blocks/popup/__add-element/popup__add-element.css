@@ -14,12 +14,12 @@
   cursor: pointer;
 }
 
-.add-element:hover {
+.popup__add-element:hover {
   opacity: 0.6;
 }
 
 @media screen and (max-width: 600px) {
-  .add-element {
+  .popup__add-element {
     font-size: 14px;
     line-height: 17px;
     margin-top: 45px;
