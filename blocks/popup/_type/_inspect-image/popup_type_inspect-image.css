@@ -5,9 +5,10 @@
              ". . popup__close"
              ". popup__image ."
              ". popup__image-description .";
+  background-color: rgba(0, 0, 0, 0.9);
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 425px) {
   .popup_type_inspect-image {
     grid-template-areas:  ". . ."
               ". popup__close ."

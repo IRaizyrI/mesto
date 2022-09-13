@@ -7,7 +7,7 @@
              ". . .";
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 425px) {
   .popup_type_add-element {
     grid-template-areas:". . ."
               ". popup__close ."
