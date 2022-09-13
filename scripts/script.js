@@ -45,7 +45,7 @@ const initialCards = [
 ];
 
 initialCards.forEach(element => {
-  createElement(element.link, element.name);
+  renderElement(createElement(element.link, element.name));
 });
 
 
@@ -72,7 +72,7 @@ function submitNameForm(evt) {
 
 function submitElementForm(evt) {
   evt.preventDefault();
-  createElement(popupAddElementLink.value, popupAddElementName.value);
+  renderElement(createElement(popupAddElementLink.value, popupAddElementName.value));
   popupAddElementLink.value = '';
   popupAddElementName.value = '';
   closePopup(popupAddElement);
@@ -87,7 +87,7 @@ function createElement(link, name){
   userElement.querySelector('.element__button-like').addEventListener('click', toggleLike);
   userElement.querySelector('.element__button-delete').addEventListener('click', deleteElement);
   elementImage.addEventListener('click', () => inspectImage(elementImage));
-  renderElement(userElement);
+  return(userElement);
 }
 
 function renderElement(element){
@@ -116,6 +116,7 @@ document.querySelector('.profile__add').addEventListener('click', () => openPopu
 popupChangeProfile.querySelector('.popup__container').addEventListener('submit', submitNameForm);
 popupAddElement.querySelector('.popup__container').addEventListener('submit', submitElementForm);
 
-popupChangeProfile.querySelector('.popup__close').addEventListener('click', () => closePopup(popupChangeProfile));
-popupAddElement.querySelector('.popup__close').addEventListener('click', () => closePopup(popupAddElement));
-popupInspectImage.querySelector('.popup__close').addEventListener('click', () => closePopup(popupInspectImage));
+document.querySelectorAll('.popup__close').forEach(button => {
+  const buttonsPopup = button.closest('.popup');
+  button.addEventListener('click', () => closePopup(buttonsPopup));
+});
