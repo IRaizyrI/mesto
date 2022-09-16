@@ -8,13 +8,13 @@ const validationArr = {
 }
 
 function showInputError(form, inputElement){
-  const errorMessage = formElement.querySelector(`#${inputElement.id}-error`);
+  const errorMessage = form.querySelector(`#${inputElement.id}-error`);
   errorMessage.textContent = inputElement.validationMessage;
   errorMessage.classList.add(validationArr.errorClass);
 };
 
 function hideInputError(form, inputElement){
-  const errorMessage = formElement.querySelector(`#${inputElement.id}-error`);
+  const errorMessage = form.querySelector(`#${inputElement.id}-error`);
   errorMessage.textContent = '';
   errorMessage.classList.remove(validationArr.errorClass);
 };
