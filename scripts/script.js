@@ -112,11 +112,23 @@ function inspectImage(element){
 
 document.querySelector('.profile__edit').addEventListener('click', () => openPopupChangeProfile(popupChangeProfile));
 document.querySelector('.profile__add').addEventListener('click', () => openPopup(popupAddElement));
-
 popupChangeProfile.querySelector('.popup__container').addEventListener('submit', submitNameForm);
 popupAddElement.querySelector('.popup__container').addEventListener('submit', submitElementForm);
 
 document.querySelectorAll('.popup__close').forEach(button => {
   const buttonsPopup = button.closest('.popup');
   button.addEventListener('click', () => closePopup(buttonsPopup));
+});
+document.addEventListener('keydown', function (evt) {
+  if (evt.key === 'Escape') {
+    document.querySelector('.popup_is-opened').classList.remove('popup_is-opened');
+  }
+}
+);
+document.querySelectorAll('.popup').forEach(popup => {
+  popup.addEventListener('click', (evt) => {
+    if(evt.target === popup){
+      closePopup(popup)
+    };
+  });
 });
