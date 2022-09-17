@@ -51,10 +51,12 @@ initialCards.forEach(element => {
 
 function closePopup(popup) {
   popup.classList.remove('popup_is-opened');
+  document.removeEventListener('keydown', closePopupEsc)
 }
 
 function openPopup(popup) {
   popup.classList.add('popup_is-opened');
+  document.addEventListener('keydown', closePopupEsc)
 }
 
 function openPopupChangeProfile(popup) {
@@ -110,6 +112,13 @@ function inspectImage(element){
   openPopup(popupInspectImage);
 }
 
+function closePopupEsc(evt) {
+  if (evt.key === 'Escape') {
+    const openedPopup = document.querySelector('.popup_is-opened');
+    closePopup(openedPopup);
+  }
+}
+
 document.querySelector('.profile__edit').addEventListener('click', () => openPopupChangeProfile(popupChangeProfile));
 document.querySelector('.profile__add').addEventListener('click', () => openPopup(popupAddElement));
 popupChangeProfile.querySelector('.popup__container').addEventListener('submit', submitNameForm);
@@ -119,14 +128,9 @@ document.querySelectorAll('.popup__close').forEach(button => {
   const buttonsPopup = button.closest('.popup');
   button.addEventListener('click', () => closePopup(buttonsPopup));
 });
-document.addEventListener('keydown', function (evt) {
-  if (evt.key === 'Escape') {
-    document.querySelector('.popup_is-opened').classList.remove('popup_is-opened');
-  }
-}
-);
+
 document.querySelectorAll('.popup').forEach(popup => {
-  popup.addEventListener('click', (evt) => {
+  popup.addEventListener('mousedown', (evt) => {
     if(evt.target === popup){
       closePopup(popup)
     };

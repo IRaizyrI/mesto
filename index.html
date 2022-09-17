@@ -41,7 +41,7 @@
     </footer>
     <div class="popup popup_type_change-profile">
       <button class="popup__close" type="button"></button>
-      <form class="popup__container" name="popup-container">
+      <form class="popup__container" name="popup-container" novalidate>
         <h2 class="popup__header">Редактировать профиль</h2>
         <input class="popup__input popup__input_type_title" type="text" id="popup__input-name" placeholder="Имя" value="placeholder" name="popup__title" minlength="2" maxlength="40" required>
         <span class="popup__input-error" id="popup__input-name-error">test</span>
@@ -52,13 +52,13 @@
     </div>
     <div class="popup popup_type_add-element">
       <button class="popup__close" type="button"></button>
-      <form class="popup__container" name="popup-container-type-add-element">
+      <form class="popup__container" name="popup-container-type-add-element" novalidate>
         <h2 class="popup__header">Новое место</h2>
         <input class="popup__input popup__input_type_name" type="text" id="popup__input-place" placeholder="Название" name="popup__name" minlength="2" maxlength="200" required>
         <span class="popup__input-error" id="popup__input-place-error">test</span>
         <input class="popup__input popup__input_type_link" type="url" id="popup__input-place-link" placeholder="Ссылка на картинку" name="popup__link" required>
         <span class="popup__input-error" id="popup__input-place-link-error">test</span>
-        <button class="popup__submit" type="submit">Создать</button>
+        <button class="popup__submit popup__submit_disabled" type="submit">Создать</button>
       </form>
     </div>
     <div class="popup popup_type_inspect-image">
