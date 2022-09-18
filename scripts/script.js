@@ -75,8 +75,11 @@ function submitNameForm(evt) {
 function submitElementForm(evt) {
   evt.preventDefault();
   renderElement(createElement(popupAddElementLink.value, popupAddElementName.value));
+  const popupElementButton = popupAddElement.querySelector('.popup__submit');
   popupAddElementLink.value = '';
   popupAddElementName.value = '';
+  popupElementButton.setAttribute('disabled', 'disabled');
+  popupElementButton.classList.add('popup__submit_disabled');
   closePopup(popupAddElement);
 }
 
@@ -124,15 +127,10 @@ document.querySelector('.profile__add').addEventListener('click', () => openPopu
 popupChangeProfile.querySelector('.popup__container').addEventListener('submit', submitNameForm);
 popupAddElement.querySelector('.popup__container').addEventListener('submit', submitElementForm);
 
-document.querySelectorAll('.popup__close').forEach(button => {
-  const buttonsPopup = button.closest('.popup');
-  button.addEventListener('click', () => closePopup(buttonsPopup));
-});
-
-document.querySelectorAll('.popup').forEach(popup => {
+document.querySelectorAll('.popup').forEach( popup => {
   popup.addEventListener('mousedown', (evt) => {
-    if(evt.target === popup){
-      closePopup(popup)
+    if (evt.target === popup || evt.target.classList.contains('popup__close')) {
+      closePopup(popup);
     };
   });
 });
