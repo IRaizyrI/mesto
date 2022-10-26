@@ -28,12 +28,6 @@ export class Card {
     this._setEventListeners();
     return(this._cardElement);
   }
-  _inspectImage(){
-    popupImage.src = element.src;
-    popupImage.alt = element.alt;
-    popupImageDescription.textContent = element.closest('.element').querySelector('.element__title').textContent;
-    openPopup(popupInspectImage);
-  }
   _setContent(){
     this._elementImage.src = this._image;
     this._elementImage.alt = this._text;
