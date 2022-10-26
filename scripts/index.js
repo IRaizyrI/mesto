@@ -92,7 +92,6 @@ function submitNameForm(evt) {
 function submitElementForm(evt) {
   evt.preventDefault();
   renderElement(createCard(popupAddElementLink.value, popupAddElementName.value));
-  const popupElementButton = popupAddElement.querySelector('.popup__submit');
   formValidators['popup-container-type-add-element'].resetValidation();
   closePopup(popupAddElement);
 }
