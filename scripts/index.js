@@ -64,7 +64,6 @@ function closePopup(popup) {
 }
 
 function openPopup(popup) {
-  formValidators['popup-container-type-add-element'].resetValidation();
   popup.classList.add('popup_is-opened');
   document.addEventListener('keydown', closePopupEsc)
 }
@@ -93,6 +92,7 @@ function submitElementForm(evt) {
   evt.preventDefault();
   renderElement(createCard(popupAddElementLink.value, popupAddElementName.value));
   formValidators['popup-container-type-add-element'].resetValidation();
+  evt.target.reset();
   closePopup(popupAddElement);
 }
 
@@ -128,7 +128,10 @@ function enableValidation (validationSettings){
 
 
 document.querySelector('.profile__edit').addEventListener('click', () => openPopupChangeProfile(popupChangeProfile));
-document.querySelector('.profile__add').addEventListener('click', () => openPopup(popupAddElement));
+document.querySelector('.profile__add').addEventListener('click', () => {
+  openPopup(popupAddElement);
+  formValidators['popup-container-type-add-element'].resetValidation();
+});
 popupChangeProfile.querySelector('.popup__container').addEventListener('submit', submitNameForm);
 popupAddElement.querySelector('.popup__container').addEventListener('submit', submitElementForm);
 
