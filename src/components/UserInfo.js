@@ -5,11 +5,10 @@ export class UserInfo {
   }
 
   getUserInfo() {
-    const info = {
+    return {
       title: this.title.textContent,
       subtitle: this.subtitle.textContent
-    }
-    return info;
+    };
   }
 
   setUserInfo(element) {

@@ -15,8 +15,7 @@ export class Card {
     this._cardElement = null;
   }
   _getTemplate() {
-    const cardElement = this._template.content.querySelector('.element').cloneNode(true);
-    return cardElement;
+    return this._template.content.querySelector('.element').cloneNode(true);
   }
   _toggleLike(evt) {
     evt.target.classList.toggle('element__button-like_active');
