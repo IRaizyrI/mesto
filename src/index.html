@@ -4,17 +4,16 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="./pages/index.css">
   <title>Место</title>
 </head>
 <body class="body">
   <div class="page">
     <header class="header">
-      <img class="header__logo" src="./images/mesto.svg" alt="Лого">
+      <img class="header__logo" src="<%=require('./images/mesto.svg')%>" alt="Лого">
     </header>
     <main class="content">
       <section class="profile">
-        <img class="profile__avatar" src="./images/kusto.png" alt="Жак-Ив Кусто">
+        <img class="profile__avatar" src="<%=require('./images/kusto.png')%>" alt="Жак-Ив Кусто">
         <div class="profile__info">
           <h1 class="profile__name">Жак-Ив Кусто</h1>
           <p class="profile__text">Исследователь океана</p>
@@ -43,9 +42,9 @@
       <button class="popup__close" type="button"></button>
       <form class="popup__container" name="popup-container" novalidate>
         <h2 class="popup__header">Редактировать профиль</h2>
-        <input class="popup__input popup__input_type_title" type="text" id="popup__input-name" placeholder="Имя" value="placeholder" name="popup__title" minlength="2" maxlength="40" required>
+        <input class="popup__input popup__input_type_title" type="text" id="popup__input-name" placeholder="Имя" value="Имя" name="popup__title" minlength="2" maxlength="40" required>
         <span class="popup__input-error" id="popup__input-name-error">test</span>
-        <input class="popup__input popup__input_type_subtitle" type="text" id="popup__input-bio" placeholder="О себе" value="placeholder" name="popup__subtitle" minlength="2" maxlength="200" required>
+        <input class="popup__input popup__input_type_subtitle" type="text" id="popup__input-bio" placeholder="О себе" value="О себе" name="popup__subtitle" minlength="2" maxlength="200" required>
         <span class="popup__input-error" id="popup__input-bio-error">test</span>
         <button class="popup__submit" type="submit">Сохранить</button>
       </form>
@@ -67,6 +66,5 @@
       <p class="popup__image-description"></p>
     </div>
   </div>
-  <script type="module" src="scripts/index.js"></script>
 </body>
 </html>

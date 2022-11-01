@@ -1,14 +1,14 @@
 export class Card {
-  constructor(link, text, template, inspectImage) {
+  constructor(link, description, template, inspectImage) {
       this._template = template;
       this._image = link;
-      this._text = text;
+      this._description = description;
       this._inspectImage = inspectImage;
   }
   _setEventListeners(){
     this._cardElement.querySelector('.element__button-like').addEventListener('click', (evt) => this._toggleLike(evt));
     this._cardElement.querySelector('.element__button-delete').addEventListener('click', () => this._deleteElement());
-    this._elementImage.addEventListener('click', () => this._inspectImage(this._elementImage));
+    this._elementImage.addEventListener('click', () => this._inspectImage(this._description, this._image));
   }
   _deleteElement(){
     this._cardElement.remove();
@@ -30,7 +30,7 @@ export class Card {
   }
   _setContent(){
     this._elementImage.src = this._image;
-    this._elementImage.alt = this._text;
-    this._cardElement.querySelector('.element__title').textContent = this._text;
+    this._elementImage.alt = this._description;
+    this._cardElement.querySelector('.element__title').textContent = this._description;
   }
 }

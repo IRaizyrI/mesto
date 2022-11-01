@@ -1,0 +1,38 @@
+{
+  "name": "mesto",
+  "version": "1.0.0",
+  "description": "learning project for yandex.practicum",
+  "main": "index.js",
+  "scripts": {
+    "build": "rd /s /q dist && webpack",
+    "dev": "webpack serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IRaizyrI/mesto.git"
+  },
+  "author": "Raizyr",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/IRaizyrI/mesto/issues"
+  },
+  "homepage": "https://github.com/IRaizyrI/mesto#readme",
+  "devDependencies": {
+    "@babel/core": "^7.19.6",
+    "@babel/preset-env": "^7.19.4",
+    "autoprefixer": "^10.4.13",
+    "babel-loader": "^9.0.1",
+    "clean-webpack-plugin": "^4.0.0",
+    "css-loader": "^6.7.1",
+    "cssnano": "^5.1.14",
+    "html-webpack-plugin": "^5.5.0",
+    "mini-css-extract-plugin": "^2.6.1",
+    "postcss-loader": "^7.0.1",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.11.1"
+  },
+  "dependencies": {
+    "core-js": "^3.26.0"
+  }
+}
