@@ -60,6 +60,5 @@ export class Card {
     this._elementImage.src = this._image;
     this._elementImage.alt = this._description;
     this._cardElement.querySelector('.element__title').textContent = this._description;
-
   }
 }
