@@ -15,6 +15,9 @@
 @import url(../blocks/profile/__info/profile__info.css);
 @import url(../blocks/profile/__text/profile__text.css);
 @import url(../blocks/profile/__edit/profile__edit.css);
+@import url(../blocks/profile/__avatar-edit/_icon/profile__avatar-edit_icon.css);
+@import url(../blocks/profile/__avatar-edit/profile__avatar-edit.css);
+@import url(../blocks/profile/__avatar-image/profile__avatar-image.css);
 
 @import url(../blocks/elements/elements.css);
 
@@ -26,6 +29,8 @@
 @import url(../blocks/element/__button-like/element__button-like.css);
 @import url(../blocks/element/__button-like/_active/element__button-like_active.css);
 @import url(../blocks/element/__button-delete/element__button-delete.css);
+@import url(../blocks/element/__like-counter/element__like-counter.css);
+@import url(../blocks/element/__like/element__like.css);
 
 @import url(../blocks/popup/popup.css);
 @import url(../blocks/popup/_type/_change-profile/popup_type_change-profile.css);
@@ -41,7 +46,11 @@
 @import url(../blocks/popup/__input-error/popup__input-error.css);
 @import url(../blocks/popup/__input-error/_visible/popup__input-error_visible.css);
 @import url(../blocks/popup/__submit/popup__submit.css);
+@import url(../blocks/popup/__submit/_type/popup__submit_type_delete-card.css);
 @import url(../blocks/popup/__submit/_disabled/popup__submit_disabled.css);
+@import url(../blocks/popup/_type/_change-avatar/popup__type_change-avatar.css);
+@import url(../blocks/popup/_type/_delete-card/popup_type_delete-card.css);
+
 
 
 @import url(../blocks/popup/__image-description/popup__image-description.css);

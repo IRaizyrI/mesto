@@ -13,7 +13,12 @@
     </header>
     <main class="content">
       <section class="profile">
-        <img class="profile__avatar" src="<%=require('./images/kusto.png')%>" alt="Жак-Ив Кусто">
+        <div class="profile__avatar">
+          <button class="profile__avatar-edit" type="button">
+            <img class="profile__avatar-icon" src="<%=require('./images/pen.svg')%>" alt="редактировать">
+          </button>
+          <img class="profile__avatar-image" src="<%=require('./images/kusto.png')%>" alt="аватар">
+        </div>
         <div class="profile__info">
           <h1 class="profile__name">Жак-Ив Кусто</h1>
           <p class="profile__text">Исследователь океана</p>
@@ -30,7 +35,11 @@
           <button type="button" class="button element__button-delete"></button>
           <div class="element__caption">
             <h2 class="element__title">Карелия</h2>
-            <button class="element__button-like" type="button"></button>
+            <div class="element__like">
+              <button class="element__button-like" type="button"></button>
+              <p class="element__like-counter">0</p>
+            </div>
+
           </div>
         </div>
       </template>
@@ -42,9 +51,9 @@
       <button class="popup__close" type="button"></button>
       <form class="popup__container" name="popup-container" novalidate>
         <h2 class="popup__header">Редактировать профиль</h2>
-        <input class="popup__input popup__input_type_title" type="text" id="popup__input-name" placeholder="Имя" value="Имя" name="popup__title" minlength="2" maxlength="40" required>
+        <input class="popup__input popup__input_type_title" type="text" id="popup__input-name" placeholder="Имя" value="Имя" name="name" minlength="2" maxlength="40" required>
         <span class="popup__input-error" id="popup__input-name-error">test</span>
-        <input class="popup__input popup__input_type_subtitle" type="text" id="popup__input-bio" placeholder="О себе" value="О себе" name="popup__subtitle" minlength="2" maxlength="200" required>
+        <input class="popup__input popup__input_type_subtitle" type="text" id="popup__input-bio" placeholder="О себе" value="О себе" name="about" minlength="2" maxlength="200" required>
         <span class="popup__input-error" id="popup__input-bio-error">test</span>
         <button class="popup__submit" type="submit">Сохранить</button>
       </form>
@@ -65,6 +74,23 @@
       <img src="template" alt="template" class="popup__image">
       <p class="popup__image-description"></p>
     </div>
+    <div class="popup popup_type_change-avatar">
+      <button class="popup__close" type="button"></button>
+      <form class="popup__container" name="avatar" novalidate>
+        <h3 class="popup__header">Обновить аватар</h3>
+        <input type="url" name="avatar_link" class="popup__input popup__input_type_link" id="popup__input-change-avatar" placeholder="Ссылка на картинку" required>
+        <span class="popup__input-error" id="popup__input-change-avatar-error"></span>
+        <button class="popup__submit popup__submit_disabled" type="submit" disabled="disabled">Сохранить</button>
+      </form>
+  </div>
+  <div class="popup popup_type_delete-card">
+    <button class="popup__close popup__close_place_delete-card" type="button"></button>
+    <div class="popup__container">
+    <h3 class="popup__header">Вы уверены?</h3>
+      <button class="popup__submit popup__submit_type_delete-card" type="submit">Да</button>
+   </div>
+</div>
+</div>
   </div>
 </body>
 </html>

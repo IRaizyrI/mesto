@@ -22,15 +22,21 @@ export class Api{
       name: name,
       about: about
       })
-  })
+  }).then(this._promiseChecker);
   }
-    postCard(name, link){
-    return fetch(`https://mesto.nomoreparties.co/v1/cohort-52/users/me`, {
+  patchUserAvatar(avatar) {
+    return fetch(`https://mesto.nomoreparties.co/v1/cohort-52/users/me/avatar`, {
+        method: "PATCH",
+        headers: this._token,
+        body: JSON.stringify({
+            avatar: avatar,
+        }),
+    }).then(this._checkResolve);
+}
+  postCard(name, link){
+    return fetch(`https://mesto.nomoreparties.co/v1/cohort-52/cards`, {
       method: "POST",
-      headers: {
-        authorization: this._token,
-        'content-type': 'application/json'
-      },
+      headers: this._token,
       body: JSON.stringify(
         {
           name: name,
@@ -40,7 +46,7 @@ export class Api{
   }).then(this._promiseChecker);
 }
   deleteCard(id) {
-    return fetch(`https://mesto.nomoreparties.co/v1/cohort-52/cards/cards/${id}`, {
+    return fetch(`https://mesto.nomoreparties.co/v1/cohort-52/cards/${id}`, {
         method: "DELETE",
         headers: this._token,
     })
