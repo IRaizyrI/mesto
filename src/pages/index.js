@@ -7,26 +7,24 @@ import { UserInfo } from '../components/UserInfo.js';
 import { Section } from '../components/Section.js';
 import { Api } from '../components/Api.js';
 import { PopupDeleteCard } from '../components/PopupDeleteCard.js';
-
-const validationSettings ={
-  formSelector: '.popup__container',
-  inputSelector: '.popup__input',
-  submitButtonSelector: '.popup__submit',
-  inactiveButtonClass: 'popup__submit_disabled',
-  inputErrorClass: 'popup__input_error',
-  errorClass: 'popup__input-error_visible'
-};
-
-const popupChangeProfile = document.querySelector('.popup_type_change-profile');
-const popupTitle = popupChangeProfile.querySelector('.popup__input_type_title');
-const popupSubtitle = popupChangeProfile.querySelector('.popup__input_type_subtitle');
-
-
-const profileName = document.querySelector('.profile__name');
-const profileText = document.querySelector('.profile__text');
-const profileAvatar = document.querySelector('.profile__avatar-image')
-const elementTemplate = document.querySelector('.element');
-const elementsContainer = document.querySelector('.elements');
+import {
+  validationSettings,
+  popupTitle,
+  popupSubtitle,
+  profileName,
+  profileText,
+  profileAvatar,
+  elementTemplate,
+  popupAddElementSelector,
+  addElementButton,
+  popupChangeProfileSelector,
+  changeProfileButton,
+  elementsContainerSelector,
+  changeAvatarButton,
+  popupChangeAvatarSelector,
+  popupInspectImageSelector,
+  formValidators,
+} from '../utils/constants.js'
 
 const userInfo = new UserInfo(profileName, profileText, profileAvatar);
 const api = new Api({
@@ -34,35 +32,10 @@ const api = new Api({
   "Content-Type": "application/json",
 },)
 
-const initialCards = [
-  {
-    name: 'Архыз',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
-  },
-  {
-    name: 'Челябинская область',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
-  },
-  {
-    name: 'Иваново',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
-  },
-  {
-    name: 'Камчатка',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
-  },
-  {
-    name: 'Холмогорский район',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
-  },
-  {
-    name: 'Байкал',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
-  }
-];
+
 let userId = null;
 //Карточки
-const elementsContainerSelector = '.elements';
+
 const cardSection = new Section({
   renderer: (element) => {
     const createdItem = createCard(element.link, element.name, element.owner._id, element.likes, element._id, userId);
@@ -100,7 +73,7 @@ function handleDeleteClick(card, id) {
   deleteCardPopup.open();
   deleteCardPopup.setCallbackSubmitPopup(() => {
     api.deleteCard(id)
-    .then(() => {card.deleteElement()})
+    .then(() => {card.deleteElement(); deleteCardPopup.close()})
     .catch((err) => {console.log(err)})
   })
 }
@@ -111,8 +84,7 @@ function handleLikeClick (card, id) {
     api.putLike(id).then((likesArr) => {card.toggleLike(likesArr.likes)}).catch((err) => console.log(err));
   }
 }
-const popupAddElementSelector = '.popup_type_add-element';
-const addElementButton = document.querySelector(popupAddElementSelector).querySelector(validationSettings.submitButtonSelector)
+
 const popupAddElementWithForm = new PopupWithForm({
   popupSelector: popupAddElementSelector,
   callbackSubmitForm: (formData) => {
@@ -137,8 +109,7 @@ function addCard(){
 document.querySelector('.profile__add').addEventListener('click', addCard);
 
 // Редактор профиля
-const popupChangeProfileSelector = '.popup_type_change-profile';
-const changeProfileButton = document.querySelector(popupChangeProfileSelector).querySelector(validationSettings.submitButtonSelector)
+
 const popupChangeProfileWithForm = new PopupWithForm({
   popupSelector: popupChangeProfileSelector,
   callbackSubmitForm: (formValues) => {
@@ -165,8 +136,7 @@ function editProfile(){
 }
 document.querySelector('.profile__edit').addEventListener('click', editProfile);
 
-const popupChangeAvatarSelector = '.popup_type_change-avatar'
-const changeAvatarButton = document.querySelector(popupChangeAvatarSelector).querySelector(validationSettings.submitButtonSelector)
+
 const popupAvatarWithForm = new PopupWithForm({
   popupSelector: popupChangeAvatarSelector,
   callbackSubmitForm: (formValues) => {
@@ -188,7 +158,7 @@ function editAvatar(){
 }
 document.querySelector('.profile__avatar-edit').addEventListener('click', editAvatar);
 //Картиночки
-const popupInspectImageSelector = '.popup_type_inspect-image'
+
 const popupWithImage = new PopupWithImage(popupInspectImageSelector);
 popupWithImage.setEventListeners();
 
@@ -197,7 +167,7 @@ function inspectImage(description, link){
 }
 
 //Валидация
-const formValidators = {}
+
 function enableValidation (validationSettings){
   const formList = Array.from(document.querySelectorAll(validationSettings.formSelector))
   formList.forEach((formElement) => {
